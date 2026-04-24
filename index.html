@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dreamkey Media — Creative strategies. Local insight. Global impact.</title>
+  <meta name="description" content="Turn attention into sales with premium media + AI. Video production, digital marketing, and automation crafted in Thailand—built to perform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding: 8rem 0 5rem;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: 1px solid var(--border-2); padding: 7px 16px;
+      background: var(--gold-dim); margin-bottom: 2rem;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 900; line-height: 1.05; letter-spacing: -0.035em;
+      margin-bottom: 1.75rem; max-width: 820px;
+    }
+    .hero p {
+      font-size: 1.125rem; color: var(--muted-mid);
+      max-width: 560px; margin-bottom: 2.5rem; line-height: 1.8;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 4rem; }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; border: 1px solid var(--border);
+      background: var(--surface); max-width: 560px;
+    }
+    .hero-stat {
+      padding: 1.5rem; border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-family: var(--font-display); font-weight: 900;
+      font-size: 2.25rem; color: var(--gold); line-height: 1; margin-bottom: 4px;
+    }
+    .hero-stat-label { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+
+    /* Hero visual */
+    .hero-visual {
+      position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      width: 45%; height: 70vh; pointer-events: none;
+    }
+    .hero-visual-inner {
+      width: 100%; height: 100%; position: relative; overflow: hidden;
+    }
+    .hero-img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(0.5) saturate(0.8);
+    }
+    .hero-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, var(--bg) 0%, transparent 50%, var(--bg) 100%),
+                  linear-gradient(180deg, var(--bg) 0%, transparent 20%, transparent 80%, var(--bg) 100%);
+    }
+
+    /* ── Services grid ── */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--border);
+    }
+    .services-grid > * { background: var(--bg); }
+
+    /* ── Heritage ── */
+    .heritage-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .heritage-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--border); margin-top: 3rem;
+    }
+    .heritage-stat {
+      background: var(--surface); padding: 2rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    .heritage-stat:hover { border-bottom-color: var(--gold); }
+
+    /* ── About Marco ── */
+    .marco-grid {
+      display: grid; grid-template-columns: 1fr 480px; gap: 5rem; align-items: center;
+    }
+    .marco-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .marco-tag {
+      border: 1px solid var(--border-2); padding: 5px 14px;
+      font-size: 0.75rem; color: var(--muted-mid); letter-spacing: 0.04em;
+    }
+    .marco-img-wrap { position: relative; }
+    .marco-img {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      filter: grayscale(20%) brightness(0.85);
+    }
+    .marco-img-frame {
+      position: absolute; top: -16px; right: -16px;
+      width: 100%; height: 100%;
+      border: 1px solid var(--gold); z-index: -1;
+    }
+    .marco-book {
+      position: absolute; bottom: -2rem; left: -2rem;
+      width: 140px; border: 2px solid var(--border-2);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ── Group ── */
+    .group-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+    }
+    .group-card {
+      border: 1px solid var(--border); background: var(--surface);
+      padding: 2.5rem; transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+    .group-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .group-icon {
+      font-size: 2.5rem; margin-bottom: 1.25rem; display: block;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 8rem 0; position: relative; overflow: hidden;
+      border-top: 1px solid var(--border); text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-visual { display: none; }
+      .heritage-grid { grid-template-columns: 1fr; }
+      .marco-grid { grid-template-columns: 1fr; }
+      .marco-img-wrap { max-width: 400px; }
+      .group-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr; max-width: 100%; }
+      .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-stat:last-child { border-bottom: none; }
+      .heritage-stats { grid-template-columns: 1fr; }
+      .group-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="main-nav" id="nav">
+  <a href="index.html" class="nav-logo">Dreamkey <span>Media</span></a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-trigger">
+        Services
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <div class="nav-dropdown-menu">
+        <a href="services/video-production.html">Video Production</a>
+        <a href="services/paid-advertising.html">Acquisition Services</a>
+        <a href="services/lead-generation.html">Lead Generation</a>
+        <a href="services/custom-music-production.html">Custom AI Music</a>
+        <a href="services/ai-automation.html">AI Automation</a>
+      </div>
+    </li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/in/dreamkeymedia" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/dreamkeymedia" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/dreamkey.media" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+    <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="padding:11px 22px;font-size:0.75rem;">
+      Book a Call
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.35;"></div>
+  <div style="position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(200,169,110,0.05);filter:blur(120px);top:-100px;left:-100px;pointer-events:none;"></div>
+  <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,77,46,0.04);filter:blur(100px);bottom:0;right:10%;pointer-events:none;"></div>
+
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <img src="https://dreamkeymedia.net/assets/marketing-agency-hero-CDP3tYfx.jpg" alt="Dreamkey Media" class="hero-img">
+      <div class="hero-img-overlay"></div>
+    </div>
+  </div>
+
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="reveal">
+      <div class="hero-tag">
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--hot);animation:pulse 2s ease infinite;display:inline-block;"></span>
+        Bangkok, Thailand · Est. 2004
+      </div>
+    </div>
+
+    <h1 class="display reveal reveal-delay-1">
+      Transform Attention<br>
+      Into <span class="display-italic" style="color:var(--gold);">Growth</span><br>
+      With Media That Performs.
+    </h1>
+
+    <p class="reveal reveal-delay-2">
+      Video, ads, and automation crafted in Thailand. Built to perform. From Bangkok's digital landscape to global markets.
+    </p>
+
+    <div class="hero-btns reveal reveal-delay-3">
+      <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot">
+        Book a Free Consultation
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#services" class="btn-ghost">See Our Work</a>
+    </div>
+
+    <div class="hero-stats reveal reveal-delay-4">
+      <div class="hero-stat">
+        <div class="hero-stat-num" data-count="20" data-suffix="+">0</div>
+        <div class="hero-stat-label">Years in Thailand</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" data-count="100" data-suffix="+">0</div>
+        <div class="hero-stat-label">Campaigns Delivered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" data-count="3" data-suffix="x">0</div>
+        <div class="hero-stat-label">Average ROI Increase</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section" id="services">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:4rem;">
+      <div>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Our Services</div>
+        <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);max-width:480px;">
+          Complete Digital<br><span class="display-italic" style="color:var(--gold);">Marketing Solutions</span>
+        </h2>
+      </div>
+      <p class="reveal reveal-delay-2" style="font-size:0.9375rem;color:var(--muted-mid);max-width:380px;line-height:1.8;">
+        From video production to AI automation, everything you need to succeed in Thailand's dynamic digital landscape.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <a href="services/video-production.html" class="service-card reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="13" height="14" rx="1.5" stroke="#C8A96E" stroke-width="1.25"/><path d="M15 9l5-3v10l-5-3V9z" stroke="#C8A96E" stroke-width="1.25" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">01</div>
+        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Video Production</h3>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">Cinematic storytelling that captures your brand essence and engages Thai and international audiences.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Corporate Videos</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Social Media Content</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> 4K Production</li>
+        </ul>
+      </a>
+
+      <a href="services/paid-advertising.html" class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 16l5-5 4 4 7-9" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="7" r="2" stroke="#C8A96E" stroke-width="1.25"/></svg>
+        </div>
+        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">02</div>
+        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Acquisition Services</h3>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">Data-driven strategies to acquire new customers and maximize ROI across multiple channels.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Google & Meta Ads</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> TikTok & LINE Ads</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Funnel Optimization</li>
+        </ul>
+      </a>
+
+      <a href="services/lead-generation.html" class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="8" r="4" stroke="#C8A96E" stroke-width="1.25"/><path d="M3 19c0-4 3.582-7 8-7s8 3 8 7" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/></svg>
+        </div>
+        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">03</div>
+        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Lead Generation</h3>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">AI-powered systems that fill your calendar with qualified appointments — consistently, every month.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Automated Pipelines</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Qualification Systems</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Booked Appointments</li>
+        </ul>
+      </a>
+
+      <a href="services/custom-music-production.html" class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M9 17V5l12-3v12" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="17" r="3" stroke="#C8A96E" stroke-width="1.25"/><circle cx="18" cy="14" r="3" stroke="#C8A96E" stroke-width="1.25"/></svg>
+        </div>
+        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">04</div>
+        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Custom AI Music</h3>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">Original soundtracks and audio branding created with cutting-edge AI technology.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Brand Soundtracks</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Commercial Jingles</li>
+          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Audio Logos</li>
+        </ul>
+      </a>
+
+      <a href="services/ai-automation.html" class="service-card reveal reveal-delay-2" style="grid-column: span 2;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+          <div>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><rect x="12" y="3" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><rect x="3" y="12" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><path d="M12 15.5h7M15.5 12v7" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/></svg>
+            </div>
+            <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">05</div>
+            <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">AI Automation</h3>
+            <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Smart automation solutions that streamline operations and enhance customer experiences.</p>
+          </div>
+          <div style="padding-top:0.5rem;">
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:1rem;">
+              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Chatbots & Virtual Assistants</li>
+              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Lead Generation Automation</li>
+              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Customer Support Systems</li>
+              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Process Automation</li>
+            </ul>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ HERITAGE ═══ -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="heritage-grid">
+      <div>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Our Heritage</div>
+        <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1.5rem;">
+          Backed by<br><span class="display-italic" style="color:var(--gold);">Dreamkey Entertainment</span>
+        </h2>
+        <p class="reveal reveal-delay-2" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">
+          Dreamkey Media is part of the Dreamkey Entertainment group, with over two decades of experience in Thailand's nightlife, events, and hospitality industry. This legacy of creativity and trust fuels our media services today.
+        </p>
+        <a href="about.html" class="btn-outline reveal reveal-delay-3">Learn Our Story
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <div class="heritage-stats">
+          <div class="heritage-stat reveal">
+            <div class="stat-num" data-count="20" data-suffix="+">0</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px;">Years in Thailand</div>
+          </div>
+          <div class="heritage-stat reveal reveal-delay-1">
+            <div class="stat-num" data-count="200" data-suffix="+">0</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px;">Events Managed</div>
+          </div>
+          <div class="heritage-stat reveal reveal-delay-2">
+            <div class="stat-num" data-count="500" data-suffix="+">0</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px;">Brand Partnerships</div>
+          </div>
+          <div class="heritage-stat reveal reveal-delay-3">
+            <div class="stat-num">#1</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px;">Entertainment Group</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+          <div style="border:1px solid var(--border);padding:2rem;background:var(--bg);">
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Deep Market Knowledge</div>
+            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">20+ years of understanding Thai consumer behavior and cultural nuances.</p>
+          </div>
+          <div style="border:1px solid var(--border);padding:2rem;background:var(--bg);">
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Proven Track Record</div>
+            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Successfully launched and managed hundreds of brands and events across Thailand.</p>
+          </div>
+          <div style="border:1px solid var(--border);padding:2rem;background:var(--bg);">
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Network & Connections</div>
+            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Extensive relationships across Thai business and entertainment sectors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ABOUT MARCO ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="marco-grid">
+      <div>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> About the Founder</div>
+        <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1.5rem;">
+          Where Thai Wisdom<br>Meets <span class="display-italic" style="color:var(--gold);">Digital Innovation</span>
+        </h2>
+
+        <div class="marco-tags reveal reveal-delay-1">
+          <span class="marco-tag">🇩🇪 German Heritage</span>
+          <span class="marco-tag">🇹🇭 Thai by Heart</span>
+          <span class="marco-tag">20+ Years Experience</span>
+          <span class="marco-tag">Trilingual</span>
+        </div>
+
+        <p class="reveal reveal-delay-2" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.25rem;">
+          Born from the rich heritage of Dreamkey Entertainment, we understand that successful marketing in Thailand requires more than just digital skills — it demands cultural insight, authentic relationships, and a deep understanding of local market dynamics.
+        </p>
+        <p class="reveal reveal-delay-3" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:2rem;">
+          With 100+ strategic partnerships built across Thailand and Southeast Asia, we bring unmatched market access and local expertise. Whether you're a local business expanding or an international brand entering Thailand, we're your trusted digital partner.
+        </p>
+
+        <div class="reveal reveal-delay-4" style="display:flex;flex-wrap:wrap;gap:1rem;">
+          <a href="contact.html" class="btn-hot">Connect with Marco
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://www.thaibyheart.com/" target="_blank" rel="noopener" class="btn-ghost">Thai by Heart</a>
+          <a href="https://ebook.dreamkeymedia.asia/" target="_blank" rel="noopener" class="btn-ghost">Get the Book</a>
+        </div>
+      </div>
+
+      <div class="marco-img-wrap reveal reveal-delay-2">
+        <img src="https://dreamkeymedia.net/assets/marco-sager-photo-Cn39zDCk.png" alt="Marco Sager, Founder of Dreamkey Media" class="marco-img">
+        <div class="marco-img-frame"></div>
+        <a href="https://ebook.dreamkeymedia.asia/" target="_blank" rel="noopener">
+          <img src="https://dreamkeymedia.net/assets/psychology-of-marketing-ebook-k3Zz7-1r.png" alt="The Psychology of Marketing ebook by Marco Sager" class="marco-book">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ DREAMKEY GROUP ═══ -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div style="text-align:center;max-width:540px;margin:0 auto 4rem;">
+      <div class="eyebrow reveal" style="justify-content:center;margin-bottom:1.25rem;"><span class="gold-line"></span> The Dreamkey Group <span class="gold-line"></span></div>
+      <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);">
+        A Family of Brands United by<br><span class="display-italic" style="color:var(--gold);">Creativity & Trust</span>
+      </h2>
+    </div>
+
+    <div class="group-grid">
+      <div class="group-card reveal">
+        <span class="group-icon">🎭</span>
+        <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;">Dreamkey Entertainment</h3>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Established leader in events, nightlife, and hospitality with 20+ years of creating unforgettable experiences across Thailand.</p>
+      </div>
+      <div class="group-card reveal reveal-delay-1" style="border-color:rgba(200,169,110,0.25);">
+        <span class="group-icon">🚀</span>
+        <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;">Dreamkey Media</h3>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Creative & digital marketing agency bringing premium media production and AI-powered automation to modern businesses.</p>
+      </div>
+      <div class="group-card reveal reveal-delay-2">
+        <span class="group-icon">🏢</span>
+        <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;">Dreamkey Property</h3>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Specialized real estate services focusing on premium properties across Thailand's most desirable locations and investment opportunities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.2;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 100%, rgba(200,169,110,0.07) 0%, transparent 70%);pointer-events:none;"></div>
+
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="reveal" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(200,169,110,0.2);padding:7px 18px;background:var(--gold-dim);margin-bottom:2rem;">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--hot);animation:pulse 2s ease infinite;display:inline-block;"></span>
+      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:600;">Free Consultation Available</span>
+    </div>
+
+    <h2 class="display reveal reveal-delay-1" style="font-size:clamp(2.5rem,5.5vw,4.5rem);margin-bottom:1.5rem;max-width:700px;margin-left:auto;margin-right:auto;">
+      Ready to Grow<br>Your <span class="display-italic" style="color:var(--gold);">Business?</span>
+    </h2>
+
+    <p class="reveal reveal-delay-2" style="font-size:1.0625rem;color:var(--muted-mid);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;">
+      Whether you're launching in Thailand or scaling globally, we're here to help. Get your free marketing audit and discover growth opportunities.
+    </p>
+
+    <div class="reveal reveal-delay-3" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+      <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="font-size:1rem;padding:18px 40px;">
+        Schedule a Free Meeting
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn-ghost" style="font-size:0.875rem;padding:18px 32px;">View Contact Info</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-logo">Dreamkey <span>Media</span></a>
+        <p class="footer-desc">Premium digital marketing and media production, powered by 20+ years of Thai market expertise.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/dreamkeymedia" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/dreamkeymedia" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@dreamkeymedia" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dreamkey.media" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@dreamkeymedia" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.53V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/video-production.html">Video Production</a></li>
+          <li><a href="services/paid-advertising.html">Acquisition Services</a></li>
+          <li><a href="services/lead-generation.html">Lead Generation</a></li>
+          <li><a href="services/custom-music-production.html">Custom AI Music</a></li>
+          <li><a href="services/ai-automation.html">AI Automation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://ebook.dreamkeymedia.asia/" target="_blank" rel="noopener">Get the Book</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="mailto:info@dreamkeymedia.net">info@dreamkeymedia.net</a></li>
+          <li><a href="tel:+66909896546">+66 (0) 909896546</a></li>
+          <li><a href="contact.html">Bangkok, Thailand</a></li>
+          <li><a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Dreamkey Media. All rights reserved. Made with ♥ in Thailand.</span>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Mobile nav
+  const burger = document.getElementById('navBurger');
+  const links = document.getElementById('navLinks');
+  if (burger) burger.addEventListener('click', () => links.classList.toggle('open'));
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Counter animation
+  function animateCounter(el) {
+    const suffix = el.dataset.suffix || '';
+    const target = parseInt(el.dataset.count);
+    if (isNaN(target)) return;
+    const duration = 2000;
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(ease * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+</script>
+
+</body>
+</html>

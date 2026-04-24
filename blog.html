@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Dreamkey Media</title>
+  <meta name="description" content="Insights on digital marketing, video production, AI automation, and growing your business in Thailand. Practical strategies from the Dreamkey Media team." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-hero { padding: 10rem 0 5rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); }
+    .blog-card {
+      background: var(--bg); display: flex; flex-direction: column;
+      text-decoration: none; color: var(--text);
+      transition: background 0.2s ease;
+      position: relative; overflow: hidden;
+    }
+    .blog-card:hover { background: var(--surface); }
+    .blog-card-img {
+      width: 100%; aspect-ratio: 16/9; overflow: hidden;
+      background: var(--surface-2); position: relative;
+    }
+    .blog-card-img-inner {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    }
+    .blog-card-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-tag {
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 0.75rem;
+    }
+    .blog-card h3 {
+      font-size: 1.1rem; font-weight: 700; line-height: 1.4;
+      margin-bottom: 0.75rem; letter-spacing: -0.01em;
+    }
+    .blog-card p { font-size: 0.875rem; color: var(--muted-mid); line-height: 1.75; flex: 1; margin-bottom: 1.5rem; }
+    .blog-meta { display: flex; align-items: center; justify-content: space-between; }
+    .blog-date { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+    .blog-read { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+    .blog-card:hover .blog-read { text-decoration: underline; }
+    .blog-featured {
+      grid-column: 1 / -1;
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .blog-featured .blog-card-img { aspect-ratio: unset; min-height: 320px; }
+    .blog-featured .blog-card-body { padding: 3rem; justify-content: center; }
+    .blog-featured h3 { font-size: 1.5rem; }
+    .category-bar {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+      padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .cat-btn {
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      font-weight: 600; padding: 6px 14px; border: 1px solid var(--border-2);
+      color: var(--muted-mid); cursor: pointer; background: none;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+    .cat-btn:hover, .cat-btn.active { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+    @media(max-width:900px){
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .blog-featured { grid-template-columns: 1fr; }
+      .blog-featured .blog-card-img { min-height: 220px; }
+    }
+    @media(max-width:640px){
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="main-nav" id="nav">
+  <a href="index.html" class="nav-logo">Dreamkey <span>Media</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-trigger">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <div class="nav-dropdown-menu">
+        <a href="services/video-production.html">Video Production</a>
+        <a href="services/paid-advertising.html">Acquisition Services</a>
+        <a href="services/lead-generation.html">Lead Generation</a>
+        <a href="services/custom-music-production.html">Custom AI Music</a>
+        <a href="services/ai-automation.html">AI Automation</a>
+      </div>
+    </li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html" style="color:var(--gold);">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="padding:11px 22px;font-size:0.75rem;">Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.3;"></div>
+  <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(200,169,110,0.06);filter:blur(100px);top:-50px;right:5%;pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Insights</div>
+    <h1 class="reveal reveal-delay-1" style="font-size:clamp(2.75rem,6vw,5rem);max-width:800px;margin-bottom:1.5rem;">
+      The Dreamkey <span class="display-italic" style="color:var(--gold);">Blog</span>
+    </h1>
+    <p class="reveal reveal-delay-2" style="font-size:1.125rem;color:var(--muted-mid);max-width:560px;line-height:1.8;">
+      Practical insights on digital marketing, video production, AI automation, and growing your business in Thailand and Southeast Asia.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;border-top:none;">
+  <div class="container">
+    <div class="category-bar reveal">
+      <button class="cat-btn active">All</button>
+      <button class="cat-btn">Digital Marketing</button>
+      <button class="cat-btn">Video Production</button>
+      <button class="cat-btn">AI & Automation</button>
+      <button class="cat-btn">Thailand Market</button>
+    </div>
+  </div>
+</section>
+
+<section style="border-top: 1px solid var(--border); padding-bottom: 6rem;">
+  <div class="container" style="padding-top:0;">
+    <div class="blog-grid">
+
+      <!-- Featured post -->
+      <a href="#" class="blog-card blog-featured reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-inner" style="background: linear-gradient(135deg, var(--surface-2) 0%, #1a1a2e 100%);">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity="0.2"><rect x="8" y="8" width="48" height="48" stroke="var(--gold)" stroke-width="1"/><line x1="8" y1="32" x2="56" y2="32" stroke="var(--gold)" stroke-width="1"/><line x1="32" y1="8" x2="32" y2="56" stroke="var(--gold)" stroke-width="1"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Thailand Market</div>
+          <h3>Why Thai Consumers Respond Differently to Digital Ads — And How to Win</h3>
+          <p>Thailand has one of Southeast Asia's most active social media populations, but cultural context matters enormously. Here's what 20 years of experience has taught us about marketing to Thai audiences.</p>
+          <div class="blog-meta">
+            <span class="blog-date">March 2026</span>
+            <span class="blog-read">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 2 -->
+      <a href="#" class="blog-card reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-inner" style="background: linear-gradient(135deg, #0d1117 0%, var(--surface-2) 100%);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity="0.25"><circle cx="20" cy="20" r="18" stroke="var(--gold)" stroke-width="1"/><path d="M20 8v12l8 4" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag">AI & Automation</div>
+          <h3>5 Business Processes You Can Automate with AI Today</h3>
+          <p>Most businesses are sitting on massive productivity gains they haven't touched. Here are the five highest-leverage automation opportunities we see most often.</p>
+          <div class="blog-meta">
+            <span class="blog-date">February 2026</span>
+            <span class="blog-read">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 3 -->
+      <a href="#" class="blog-card reveal reveal-delay-1">
+        <div class="blog-card-img">
+          <div class="blog-card-img-inner" style="background: linear-gradient(135deg, #0a0f1a 0%, var(--surface) 100%);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity="0.25"><rect x="4" y="10" width="32" height="20" rx="2" stroke="var(--gold)" stroke-width="1"/><circle cx="20" cy="20" r="6" stroke="var(--gold)" stroke-width="1"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Video Production</div>
+          <h3>Corporate Video in 2026: What Works and What Doesn't</h3>
+          <p>Attention spans are shorter, distribution is fragmented, and audiences are more discerning than ever. Here's how to make corporate video that actually gets watched.</p>
+          <div class="blog-meta">
+            <span class="blog-date">February 2026</span>
+            <span class="blog-read">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 4 -->
+      <a href="#" class="blog-card reveal reveal-delay-2">
+        <div class="blog-card-img">
+          <div class="blog-card-img-inner" style="background: linear-gradient(135deg, var(--bg) 0%, #13131d 100%);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity="0.25"><path d="M8 32L16 16l8 10 6-8 8 14H8z" stroke="var(--gold)" stroke-width="1" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Digital Marketing</div>
+          <h3>LINE Ads: The Untapped Channel Every Thailand Marketer Needs</h3>
+          <p>LINE is used by 90%+ of Thai internet users, yet most brands barely scratch the surface of LINE's advertising potential. Here's how to change that.</p>
+          <div class="blog-meta">
+            <span class="blog-date">January 2026</span>
+            <span class="blog-read">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 5 -->
+      <a href="#" class="blog-card reveal reveal-delay-1">
+        <div class="blog-card-img">
+          <div class="blog-card-img-inner" style="background: linear-gradient(135deg, #0f0d1a 0%, var(--surface-2) 100%);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity="0.25"><circle cx="20" cy="20" r="16" stroke="var(--gold)" stroke-width="1"/><path d="M14 20h12M20 14v12" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Digital Marketing</div>
+          <h3>How to Build a Lead Generation Funnel That Actually Converts</h3>
+          <p>Most lead gen funnels leak at every stage. This is the architecture we've tested and refined across dozens of campaigns — the version that holds water.</p>
+          <div class="blog-meta">
+            <span class="blog-date">January 2026</span>
+            <span class="blog-read">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 6 -->
+      <a href="#" class="blog-card reveal reveal-delay-2">
+        <div class="blog-card-img">
+          <div class="blog-card-img-inner" style="background: linear-gradient(135deg, #0d0d0a 0%, var(--surface) 100%);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity="0.25"><path d="M8 28l8-8 6 6 4-4 6 6" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag">AI & Automation</div>
+          <h3>AI Music for Brands: Is Royalty-Free AI Music Right for You?</h3>
+          <p>Licensing music for ads and videos is expensive and legally complex. AI-generated music solves both problems — but it's not for every situation. Here's when to use it.</p>
+          <div class="blog-meta">
+            <span class="blog-date">December 2025</span>
+            <span class="blog-read">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter CTA -->
+<section style="padding:6rem 0;background:var(--surface);border-top:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="nl-col">
+      <div>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Stay Sharp</div>
+        <h2 class="reveal reveal-delay-1" style="font-size:clamp(1.75rem,3vw,2.5rem);margin-bottom:1rem;">
+          Get the Best Insights <span class="display-italic" style="color:var(--gold);">First</span>
+        </h2>
+        <p class="reveal reveal-delay-2" style="font-size:0.95rem;color:var(--muted-mid);line-height:1.8;">
+          Join business owners and marketers across Thailand who get our best insights on digital marketing, AI, and growing in Southeast Asia.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div style="display:flex;gap:0;border:1px solid var(--border-2);overflow:hidden;">
+          <input type="email" placeholder="Your email address" style="flex:1;padding:14px 16px;background:var(--bg);border:none;outline:none;color:var(--text);font-family:var(--font-body);font-size:0.875rem;min-width:0;" />
+          <button class="btn-hot" style="border-radius:0;white-space:nowrap;padding:14px 20px;flex-shrink:0;">
+            Subscribe <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p style="font-size:0.75rem;color:var(--muted);margin-top:0.75rem;">No spam. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:768px){.nl-col{grid-template-columns:1fr!important;gap:2rem!important;}}</style>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="index.html" class="footer-logo">Dreamkey <span>Media</span></a><p class="footer-desc">Premium digital marketing and media production, powered by 20+ years of Thai market expertise.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services/video-production.html">Video Production</a></li><li><a href="services/paid-advertising.html">Acquisition Services</a></li><li><a href="services/lead-generation.html">Lead Generation</a></li><li><a href="services/custom-music-production.html">Custom AI Music</a></li><li><a href="services/ai-automation.html">AI Automation</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Get In Touch</h4><ul><li><a href="mailto:info@dreamkeymedia.net">info@dreamkeymedia.net</a></li><li><a href="tel:+66909896546">+66 (0) 909896546</a></li><li><a href="contact.html">Bangkok, Thailand</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Dreamkey Media. All rights reserved. Made with ♥ in Thailand.</span></div>
+  </div>
+</footer>
+<script>
+  const nav=document.getElementById('nav'); window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+  document.getElementById('navBurger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  document.querySelectorAll('.cat-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom AI Music Production — Dreamkey Media</title>
+  <meta name="description" content="Custom AI-generated music for brands, videos, events, and campaigns. Original, royalty-free compositions tailored to your brand identity." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero { padding: 10rem 0 5rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .feature-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--border); }
+    .feature-card { background: var(--bg); padding: 2.5rem; transition: background 0.2s ease; }
+    .feature-card:hover { background: var(--surface); }
+    .process-step { display: grid; grid-template-columns: 60px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+    .process-step:last-child { border-bottom: none; }
+    .step-num { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: rgba(200,169,110,0.3); line-height: 1; }
+    .waveform { display: flex; align-items: center; gap: 3px; height: 48px; margin-bottom: 2rem; }
+    .waveform span { display: block; width: 3px; background: var(--gold); border-radius: 2px; animation: wave 1.4s ease-in-out infinite; }
+    .waveform span:nth-child(1){ height:20px; animation-delay:0s; }
+    .waveform span:nth-child(2){ height:36px; animation-delay:0.1s; }
+    .waveform span:nth-child(3){ height:28px; animation-delay:0.2s; }
+    .waveform span:nth-child(4){ height:44px; animation-delay:0.15s; }
+    .waveform span:nth-child(5){ height:32px; animation-delay:0.3s; }
+    .waveform span:nth-child(6){ height:48px; animation-delay:0.05s; }
+    .waveform span:nth-child(7){ height:24px; animation-delay:0.25s; }
+    .waveform span:nth-child(8){ height:40px; animation-delay:0.1s; }
+    .waveform span:nth-child(9){ height:16px; animation-delay:0.35s; }
+    .waveform span:nth-child(10){ height:36px; animation-delay:0.2s; }
+    .waveform span:nth-child(11){ height:28px; animation-delay:0s; }
+    .waveform span:nth-child(12){ height:44px; animation-delay:0.15s; }
+    @keyframes wave { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(0.4)} }
+    @media(max-width:768px){ .feature-grid{grid-template-columns:1fr!important;} }
+  </style>
+</head>
+<body>
+
+<nav class="main-nav" id="nav">
+  <a href="../index.html" class="nav-logo">Dreamkey <span>Media</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-trigger" style="color:var(--gold);">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <div class="nav-dropdown-menu">
+        <a href="video-production.html">Video Production</a>
+        <a href="paid-advertising.html">Acquisition Services</a>
+        <a href="lead-generation.html">Lead Generation</a>
+        <a href="custom-music-production.html" style="color:var(--gold)!important;border-left-color:var(--gold)!important;background:var(--gold-dim)!important;">Custom AI Music</a>
+        <a href="ai-automation.html">AI Automation</a>
+      </div>
+    </li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="padding:11px 22px;font-size:0.75rem;">Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.3;"></div>
+  <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(200,169,110,0.06);filter:blur(100px);top:-50px;right:5%;pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div style="margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;">
+      <a href="../index.html#services" style="font-size:0.75rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Services</a>
+      <span style="color:var(--border-2);">→</span>
+      <span style="font-size:0.75rem;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;">Custom AI Music</span>
+    </div>
+    <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Our Services</div>
+    <h1 class="reveal reveal-delay-1" style="font-size:clamp(2.75rem,6vw,5rem);max-width:800px;margin-bottom:1.5rem;">
+      Custom AI <span class="display-italic" style="color:var(--gold);">Music Production</span>
+    </h1>
+    <p class="reveal reveal-delay-2" style="font-size:1.125rem;color:var(--muted-mid);max-width:560px;line-height:1.8;">
+      Original, royalty-free music tailored to your brand. From cinematic scores to upbeat ad tracks — AI-powered production at a fraction of traditional costs.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;" class="two-col">
+      <div>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> What We Deliver</div>
+        <h2 class="reveal reveal-delay-1" style="font-size:clamp(1.75rem,3vw,2.5rem);margin-bottom:1.5rem;">
+          Music That <span class="display-italic" style="color:var(--gold);">Moves People</span>
+        </h2>
+        <div class="waveform reveal reveal-delay-2">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="reveal reveal-delay-2" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.25rem;">
+          Music shapes emotion, builds brand identity, and keeps audiences engaged. Our AI music production combines advanced generative models with human creative direction to produce tracks that feel genuinely original — not generic library music.
+        </p>
+        <p class="reveal reveal-delay-3" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:2rem;">
+          Every track is composed to your brief — mood, tempo, genre, duration, and brand personality — then refined until it's exactly right. You own the rights. No licensing fees, ever.
+        </p>
+        <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot reveal reveal-delay-4">
+          Request a Sample Track <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.75rem;">Brand Anthems</div>
+            <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Signature music that defines your brand identity across campaigns, events, and digital channels.</p>
+          </div>
+          <div class="feature-card">
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.75rem;">Ad & Video Scores</div>
+            <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Perfectly timed background music for TV commercials, social ads, corporate videos, and documentaries.</p>
+          </div>
+          <div class="feature-card">
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.75rem;">Event Music</div>
+            <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Custom event playlists, entrance music, award ceremony scores, and background ambience for any occasion.</p>
+          </div>
+          <div class="feature-card">
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.75rem;">Podcast & Content</div>
+            <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Intro/outro jingles, transition music, and ambient beds for podcasts, YouTube channels, and streaming content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:900px){.two-col{grid-template-columns:1fr!important;gap:2.5rem!important;}}</style>
+
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Our Process</div>
+    <h2 class="reveal reveal-delay-1" style="font-size:clamp(1.75rem,3vw,2.5rem);margin-bottom:3rem;max-width:480px;">
+      From <span class="display-italic" style="color:var(--gold);">Brief to Track</span>
+    </h2>
+    <div style="max-width:720px;">
+      <div class="process-step reveal"><div class="step-num">01</div><div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Creative Brief</h3><p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Tell us your brand personality, the mood you want to evoke, reference tracks you like, and how the music will be used.</p></div></div>
+      <div class="process-step reveal reveal-delay-1"><div class="step-num">02</div><div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Concept & Composition</h3><p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">We compose 2-3 initial directions using AI music models guided by our creative team. You choose a direction to develop.</p></div></div>
+      <div class="process-step reveal reveal-delay-2"><div class="step-num">03</div><div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Refinement</h3><p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">We refine the chosen track based on your feedback — adjusting tempo, instrumentation, dynamics, and feel until it's perfect.</p></div></div>
+      <div class="process-step reveal reveal-delay-3"><div class="step-num">04</div><div><h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Final Delivery</h3><p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Delivered in WAV and MP3 formats, with stems if needed. Full ownership rights transferred to you — no royalties, ever.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:7rem 0;border-top:1px solid var(--border);position:relative;overflow:hidden;text-align:center;">
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.2;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <h2 class="display reveal" style="font-size:clamp(2rem,4.5vw,3.5rem);margin-bottom:1.5rem;">Give Your Brand a <span class="display-italic" style="color:var(--gold);">Sound</span></h2>
+    <p class="reveal reveal-delay-1" style="font-size:1rem;color:var(--muted-mid);max-width:460px;margin:0 auto 2.5rem;line-height:1.8;">Book a free call and let's discuss the music your brand deserves.</p>
+    <div class="reveal reveal-delay-2" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+      <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="font-size:1rem;padding:18px 40px;">Book a Free Call <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="../contact.html" class="btn-ghost" style="padding:18px 32px;">Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="../index.html" class="footer-logo">Dreamkey <span>Media</span></a><p class="footer-desc">Premium digital marketing and media production, powered by 20+ years of Thai market expertise.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="video-production.html">Video Production</a></li><li><a href="paid-advertising.html">Acquisition Services</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="custom-music-production.html">Custom AI Music</a></li><li><a href="ai-automation.html">AI Automation</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="../about.html">About Us</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Get In Touch</h4><ul><li><a href="mailto:info@dreamkeymedia.net">info@dreamkeymedia.net</a></li><li><a href="tel:+66909896546">+66 (0) 909896546</a></li><li><a href="../contact.html">Bangkok, Thailand</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Dreamkey Media. All rights reserved. Made with ♥ in Thailand.</span></div>
+  </div>
+</footer>
+<script>
+  const nav=document.getElementById('nav'); window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+  document.getElementById('navBurger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

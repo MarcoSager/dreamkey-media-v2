@@ -1,0 +1,7 @@
+node_modules/
+temporary screenshots/
+.DS_Store
+*.log
+package.json
+package-lock.json
+.firecrawl/
