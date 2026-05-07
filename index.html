@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dreamkey Media — Creative strategies. Local insight. Global impact.</title>
-  <meta name="description" content="Turn attention into sales with premium media + AI. Video production, digital marketing, and automation crafted in Thailand—built to perform." />
+  <title>Dreamkey Media — Performance Marketing & Growth Systems | Bangkok, Thailand</title>
+  <meta name="description" content="Performance marketing agency in Bangkok. Conversion-focused websites, paid advertising, SEO, and automation systems built to generate leads, bookings, and revenue for businesses in Thailand." />
+  <meta name="keywords" content="Marketing Agency Bangkok, Website Design Bangkok, SEO Agency Bangkok, Performance Marketing Thailand, Lead Generation Agency Bangkok, Digital Marketing Thailand" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+
     /* ── Hero ── */
     .hero {
       min-height: 100vh; display: flex; align-items: center;
@@ -24,11 +26,11 @@
     .hero h1 {
       font-size: clamp(3rem, 6.5vw, 5.5rem);
       font-weight: 900; line-height: 1.05; letter-spacing: -0.035em;
-      margin-bottom: 1.75rem; max-width: 820px;
+      margin-bottom: 1.75rem; max-width: 860px;
     }
     .hero p {
-      font-size: 1.125rem; color: var(--muted-mid);
-      max-width: 560px; margin-bottom: 2.5rem; line-height: 1.8;
+      font-size: 1.2rem; color: var(--text-2);
+      max-width: 580px; margin-bottom: 2.5rem; line-height: 1.85;
     }
     .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 4rem; }
     .hero-stats {
@@ -57,7 +59,7 @@
     }
     .hero-img {
       width: 100%; height: 100%; object-fit: cover;
-      filter: brightness(0.5) saturate(0.8);
+      filter: brightness(0.4) saturate(0.7);
     }
     .hero-img-overlay {
       position: absolute; inset: 0;
@@ -65,12 +67,156 @@
                   linear-gradient(180deg, var(--bg) 0%, transparent 20%, transparent 80%, var(--bg) 100%);
     }
 
-    /* ── Services grid ── */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    /* ── Trust Strip ── */
+    .trust-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      padding: 2rem 0;
+      overflow: hidden;
+    }
+    .trust-strip-inner {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: 0;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 0.75rem 2rem;
+      border-right: 1px solid var(--border);
+      flex: 1; min-width: 200px;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+    .trust-item-text {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted-mid); font-weight: 600; line-height: 1.4;
+    }
+    .trust-item-text strong { color: var(--gold); display: block; font-size: 0.8rem; }
+
+    /* ── How We Drive Growth ── */
+    .growth-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
       background: var(--border);
     }
-    .services-grid > * { background: var(--bg); }
+    .growth-grid > * { background: var(--bg); }
+    .growth-card {
+      padding: 3rem; position: relative; overflow: hidden;
+      transition: background 0.3s ease;
+      border: none;
+    }
+    .growth-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .growth-card:hover { background: var(--surface); }
+    .growth-card:hover::after { transform: scaleX(1); }
+    .growth-num {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--hot); font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .growth-icon {
+      width: 52px; height: 52px;
+      border: 1px solid var(--border-2); background: var(--gold-dim);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.75rem;
+    }
+    .growth-card h3 {
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2;
+    }
+    .growth-card p {
+      font-size: 0.975rem; color: var(--text-2); line-height: 1.85; margin-bottom: 1.75rem;
+    }
+    .growth-outcomes {
+      list-style: none; display: flex; flex-direction: column; gap: 8px;
+    }
+    .growth-outcomes li {
+      font-size: 0.8rem; color: var(--muted); display: flex; align-items: center; gap: 10px;
+    }
+    .growth-outcomes li::before {
+      content: ''; width: 16px; height: 1px; background: var(--gold); flex-shrink: 0;
+    }
+
+    /* ── Results ── */
+    .results-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--border); margin-bottom: 4rem;
+    }
+    .result-card {
+      background: var(--surface); padding: 2.5rem 2rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .result-card:hover { border-bottom-color: var(--gold); background: var(--surface-2); }
+    .result-num {
+      font-family: var(--font-display); font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3rem); color: var(--gold);
+      line-height: 1; margin-bottom: 0.5rem;
+    }
+    .result-label {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.5; text-transform: uppercase;
+      letter-spacing: 0.06em; font-weight: 600;
+    }
+    .result-sub {
+      font-size: 0.75rem; color: var(--muted); margin-top: 4px; font-style: italic;
+    }
+    .case-study-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .case-card {
+      border: 1px solid var(--border); background: var(--surface);
+      padding: 2rem; position: relative; overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+    .case-card:hover { border-color: rgba(200,169,110,0.3); }
+    .case-tag {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--hot); font-weight: 600; margin-bottom: 1rem;
+    }
+    .case-metric {
+      font-family: var(--font-display); font-size: 2.5rem;
+      font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .case-desc {
+      font-size: 0.9rem; color: var(--text-2); line-height: 1.75; margin-bottom: 1.25rem;
+    }
+    .case-industry {
+      font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+
+    /* ── Process ── */
+    .process-steps {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+      background: var(--border);
+    }
+    .process-step {
+      background: var(--bg); padding: 2.5rem 2rem;
+      position: relative; overflow: hidden;
+      transition: background 0.3s ease;
+    }
+    .process-step:hover { background: var(--surface); }
+    .process-step::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+    .process-step:hover::before { background: var(--gold); }
+    .process-num {
+      font-family: var(--font-display); font-size: 3rem; font-weight: 900;
+      color: var(--border-2); line-height: 1; margin-bottom: 1.25rem;
+      transition: color 0.3s ease;
+    }
+    .process-step:hover .process-num { color: rgba(200,169,110,0.2); }
+    .process-step h4 {
+      font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.01em;
+    }
+    .process-step p {
+      font-size: 0.82rem; color: var(--muted); line-height: 1.7;
+    }
 
     /* ── Heritage ── */
     .heritage-grid {
@@ -137,14 +283,27 @@
       .marco-grid { grid-template-columns: 1fr; }
       .marco-img-wrap { max-width: 400px; }
       .group-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(3, 1fr); }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-study-strip { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
-      .services-grid { grid-template-columns: 1fr; }
+      .growth-grid { grid-template-columns: 1fr; }
       .hero-stats { grid-template-columns: 1fr; max-width: 100%; }
       .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
       .hero-stat:last-child { border-bottom: none; }
       .heritage-stats { grid-template-columns: 1fr; }
       .group-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .results-grid { grid-template-columns: 1fr 1fr; }
+      .case-study-strip { grid-template-columns: 1fr; }
+      .trust-strip-inner { flex-direction: column; }
+      .trust-item { border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
+      .trust-item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .process-steps { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -162,11 +321,11 @@
         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </span>
       <div class="nav-dropdown-menu">
-        <a href="services/video-production.html">Video Production</a>
-        <a href="services/paid-advertising.html">Acquisition Services</a>
-        <a href="services/lead-generation.html">Lead Generation</a>
-        <a href="services/custom-music-production.html">Custom AI Music</a>
-        <a href="services/ai-automation.html">AI Automation</a>
+        <a href="services/video-production.html">Website Design</a>
+        <a href="services/paid-advertising.html">Paid Advertising</a>
+        <a href="services/lead-generation.html">SEO & Visibility</a>
+        <a href="services/ai-automation.html">Automation Systems</a>
+        <a href="services/custom-music-production.html">Video Production</a>
       </div>
     </li>
     <li><a href="about.html">About</a></li>
@@ -185,9 +344,15 @@
       <a href="https://www.instagram.com/dreamkey.media" target="_blank" rel="noopener" aria-label="Instagram">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
+      <a href="https://www.youtube.com/@dreamkeymedia" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@dreamkeymedia" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.53V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+      </a>
     </div>
     <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="padding:11px 22px;font-size:0.75rem;">
-      Book a Call
+      Free Growth Audit
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
     <button class="nav-burger" id="navBurger" aria-label="Menu">
@@ -200,7 +365,7 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="grid-bg" style="position:absolute;inset:0;opacity:0.35;"></div>
-  <div style="position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(200,169,110,0.05);filter:blur(120px);top:-100px;left:-100px;pointer-events:none;"></div>
+  <div style="position:absolute;width:700px;height:700px;border-radius:50%;background:rgba(200,169,110,0.05);filter:blur(140px);top:-200px;left:-150px;pointer-events:none;"></div>
   <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,77,46,0.04);filter:blur(100px);bottom:0;right:10%;pointer-events:none;"></div>
 
   <div class="hero-visual">
@@ -214,138 +379,306 @@
     <div class="reveal">
       <div class="hero-tag">
         <span style="width:7px;height:7px;border-radius:50%;background:var(--hot);animation:pulse 2s ease infinite;display:inline-block;"></span>
-        Bangkok, Thailand · Est. 2004
+        Performance Marketing · Bangkok, Thailand
       </div>
     </div>
 
     <h1 class="display reveal reveal-delay-1">
-      Transform Attention<br>
-      Into <span class="display-italic" style="color:var(--gold);">Growth</span><br>
-      With Media That Performs.
+      We Build Growth Systems<br>
+      That Turn <span class="display-italic" style="color:var(--gold);">Traffic</span><br>
+      Into Customers.
     </h1>
 
     <p class="reveal reveal-delay-2">
-      Video, ads, and automation crafted in Thailand. Built to perform. From Bangkok's digital landscape to global markets.
+      We help businesses grow through conversion-focused websites, paid advertising, SEO, and automation systems designed to generate leads, bookings, and revenue.
     </p>
 
     <div class="hero-btns reveal reveal-delay-3">
       <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot">
-        Book a Free Consultation
+        Get A Free Growth Audit
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#services" class="btn-ghost">See Our Work</a>
+      <a href="#results" class="btn-ghost">See Our Results</a>
     </div>
 
     <div class="hero-stats reveal reveal-delay-4">
       <div class="hero-stat">
         <div class="hero-stat-num" data-count="20" data-suffix="+">0</div>
-        <div class="hero-stat-label">Years in Thailand</div>
+        <div class="hero-stat-label">Years Market Experience</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num" data-count="100" data-suffix="+">0</div>
-        <div class="hero-stat-label">Campaigns Delivered</div>
+        <div class="hero-stat-label">Revenue Campaigns Delivered</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num" data-count="3" data-suffix="x">0</div>
-        <div class="hero-stat-label">Average ROI Increase</div>
+        <div class="hero-stat-num" data-count="4" data-suffix="x">0</div>
+        <div class="hero-stat-label">Average ROAS For Clients</div>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ SERVICES ═══ -->
+<!-- ═══ TRUST STRIP ═══ -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <div class="trust-item">
+        <div class="trust-dot"></div>
+        <div class="trust-item-text">
+          <strong>Top 3 Google Rankings</strong>
+          Businesses We've Ranked
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot"></div>
+        <div class="trust-item-text">
+          <strong>Performance Marketing</strong>
+          Meta, Google & SEO Systems
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot"></div>
+        <div class="trust-item-text">
+          <strong>Hospitality & Lifestyle Brands</strong>
+          Thailand & Southeast Asia
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot"></div>
+        <div class="trust-item-text">
+          <strong>Revenue-Focused Infrastructure</strong>
+          Systems Built To Scale
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ HOW WE DRIVE GROWTH ═══ -->
 <section class="section" id="services">
   <div class="container">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:4rem;">
       <div>
-        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Our Services</div>
-        <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);max-width:480px;">
-          Complete Digital<br><span class="display-italic" style="color:var(--gold);">Marketing Solutions</span>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Growth Systems</div>
+        <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3.25rem);max-width:520px;line-height:1.1;">
+          How We<br><span class="display-italic" style="color:var(--gold);">Drive Revenue</span>
         </h2>
       </div>
-      <p class="reveal reveal-delay-2" style="font-size:0.9375rem;color:var(--muted-mid);max-width:380px;line-height:1.8;">
-        From video production to AI automation, everything you need to succeed in Thailand's dynamic digital landscape.
+      <p class="reveal reveal-delay-2" style="font-size:0.9375rem;color:var(--muted-mid);max-width:400px;line-height:1.8;">
+        Four interconnected systems that work together to attract, convert, and retain customers — generating measurable business growth.
       </p>
     </div>
 
-    <div class="services-grid">
-      <a href="services/video-production.html" class="service-card reveal">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="13" height="14" rx="1.5" stroke="#C8A96E" stroke-width="1.25"/><path d="M15 9l5-3v10l-5-3V9z" stroke="#C8A96E" stroke-width="1.25" stroke-linejoin="round"/></svg>
-        </div>
-        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">01</div>
-        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Video Production</h3>
-        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">Cinematic storytelling that captures your brand essence and engages Thai and international audiences.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Corporate Videos</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Social Media Content</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> 4K Production</li>
-        </ul>
-      </a>
+    <div class="growth-grid">
 
-      <a href="services/paid-advertising.html" class="service-card reveal reveal-delay-1">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 16l5-5 4 4 7-9" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="7" r="2" stroke="#C8A96E" stroke-width="1.25"/></svg>
+      <!-- Card 1 -->
+      <div class="growth-card reveal">
+        <div class="growth-num">01</div>
+        <div class="growth-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="1.5" stroke="#C8A96E" stroke-width="1.25"/><path d="M8 21h8M12 17v4" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/><path d="M6 10h2M10 7h8M10 10h4" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/></svg>
         </div>
-        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">02</div>
-        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Acquisition Services</h3>
-        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">Data-driven strategies to acquire new customers and maximize ROI across multiple channels.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Google & Meta Ads</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> TikTok & LINE Ads</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Funnel Optimization</li>
+        <h3>Conversion-Focused<br>Websites</h3>
+        <p>Fast, modern websites engineered to convert visitors into customers. Every page, headline, and call-to-action is built with one goal: revenue.</p>
+        <ul class="growth-outcomes">
+          <li>Landing pages optimized for lead capture</li>
+          <li>Mobile-first performance & speed</li>
+          <li>Conversion rate optimization built in</li>
+          <li>Integrated CRM & booking systems</li>
         </ul>
-      </a>
+      </div>
 
-      <a href="services/lead-generation.html" class="service-card reveal reveal-delay-2">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="8" r="4" stroke="#C8A96E" stroke-width="1.25"/><path d="M3 19c0-4 3.582-7 8-7s8 3 8 7" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/></svg>
+      <!-- Card 2 -->
+      <div class="growth-card reveal reveal-delay-1">
+        <div class="growth-num">02</div>
+        <div class="growth-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 3 7-9" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="6" r="2.5" stroke="#C8A96E" stroke-width="1.25"/><path d="M3 21h18" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/></svg>
         </div>
-        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">03</div>
-        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Lead Generation</h3>
-        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">AI-powered systems that fill your calendar with qualified appointments — consistently, every month.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Automated Pipelines</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Qualification Systems</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Booked Appointments</li>
+        <h3>Paid Advertising<br>& Customer Acquisition</h3>
+        <p>Meta and Google ad campaigns designed for ROI — not vanity metrics. We build, manage, and scale paid systems that generate qualified leads and bookings.</p>
+        <ul class="growth-outcomes">
+          <li>Meta Ads (Facebook & Instagram)</li>
+          <li>Google Search & Display campaigns</li>
+          <li>Retargeting & audience optimization</li>
+          <li>Full-funnel ROI tracking</li>
         </ul>
-      </a>
+      </div>
 
-      <a href="services/custom-music-production.html" class="service-card reveal reveal-delay-1">
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M9 17V5l12-3v12" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="17" r="3" stroke="#C8A96E" stroke-width="1.25"/><circle cx="18" cy="14" r="3" stroke="#C8A96E" stroke-width="1.25"/></svg>
+      <!-- Card 3 -->
+      <div class="growth-card reveal">
+        <div class="growth-num">03</div>
+        <div class="growth-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#C8A96E" stroke-width="1.25"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/><path d="M8 12a4 4 0 018 0" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="#C8A96E"/></svg>
         </div>
-        <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">04</div>
-        <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">Custom AI Music</h3>
-        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">Original soundtracks and audio branding created with cutting-edge AI technology.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Brand Soundtracks</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Commercial Jingles</li>
-          <li style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:var(--gold);">→</span> Audio Logos</li>
+        <h3>SEO & Long-Term<br>Visibility</h3>
+        <p>Search optimization strategies that build lasting organic traffic and rankings. Dominate local and national search results to drive consistent inbound leads.</p>
+        <ul class="growth-outcomes">
+          <li>Local SEO for Bangkok & Thailand</li>
+          <li>Technical site audits & optimization</li>
+          <li>Content strategy & keyword targeting</li>
+          <li>Google Business Profile management</li>
         </ul>
-      </a>
+      </div>
 
-      <a href="services/ai-automation.html" class="service-card reveal reveal-delay-2" style="grid-column: span 2;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
-          <div>
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><rect x="12" y="3" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><rect x="3" y="12" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><path d="M12 15.5h7M15.5 12v7" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/></svg>
-            </div>
-            <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:0.75rem;">05</div>
-            <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:1rem;">AI Automation</h3>
-            <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Smart automation solutions that streamline operations and enhance customer experiences.</p>
-          </div>
-          <div style="padding-top:0.5rem;">
-            <ul style="list-style:none;display:flex;flex-direction:column;gap:1rem;">
-              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Chatbots & Virtual Assistants</li>
-              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Lead Generation Automation</li>
-              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Customer Support Systems</li>
-              <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--muted-mid);"><span style="width:28px;height:28px;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-family:var(--font-display);font-size:0.8rem;">→</span>Process Automation</li>
-            </ul>
-          </div>
+      <!-- Card 4 -->
+      <div class="growth-card reveal reveal-delay-1">
+        <div class="growth-num">04</div>
+        <div class="growth-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="#C8A96E" stroke-width="1.25"/><path d="M14 17.5h7M17.5 14v7" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round"/></svg>
         </div>
+        <h3>Automation &<br>Revenue Systems</h3>
+        <p>CRM setup, lead follow-up sequences, and customer journey automations that work 24/7 to nurture prospects and close more deals without manual effort.</p>
+        <ul class="growth-outcomes">
+          <li>CRM integration & pipeline setup</li>
+          <li>Automated lead nurture sequences</li>
+          <li>Chatbots & appointment booking</li>
+          <li>Customer retention workflows</li>
+        </ul>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="growth-card reveal">
+        <div class="growth-num">05</div>
+        <div class="growth-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="14" height="16" rx="1.5" stroke="#C8A96E" stroke-width="1.25"/><path d="M16 9l6-3v12l-6-3V9z" stroke="#C8A96E" stroke-width="1.25" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Video Production<br>& Brand Content</h3>
+        <p>Cinematic video content that captures attention and communicates your brand value. From corporate films to social media ads built for performance.</p>
+        <ul class="growth-outcomes">
+          <li>Corporate & brand films</li>
+          <li>Social media video ads (Meta, TikTok)</li>
+          <li>4K production in Thailand</li>
+          <li>Script, shoot & post-production</li>
+        </ul>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="growth-card reveal reveal-delay-1">
+        <div class="growth-num">06</div>
+        <div class="growth-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18V6l12-3v12" stroke="#C8A96E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="#C8A96E" stroke-width="1.25"/><circle cx="18" cy="15" r="3" stroke="#C8A96E" stroke-width="1.25"/></svg>
+        </div>
+        <h3>Custom AI Music<br>& Audio Branding</h3>
+        <p>Original soundtracks, jingles, and audio logos created with cutting-edge AI — giving your brand a distinctive sonic identity across every touchpoint.</p>
+        <ul class="growth-outcomes">
+          <li>Brand soundtracks & background music</li>
+          <li>Commercial jingles & audio logos</li>
+          <li>Ad video sound design</li>
+          <li>Royalty-free, fully licensed</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;" class="reveal">
+      <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="font-size:0.9rem;padding:15px 34px;">
+        Request A Strategy Session
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ RESULTS ═══ -->
+<section class="section" id="results" style="background:var(--surface);">
+  <div class="container">
+    <div style="margin-bottom:3.5rem;">
+      <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Measurable Outcomes</div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
+        <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3.25rem);line-height:1.1;">
+          Growth That Shows<br><span class="display-italic" style="color:var(--gold);">In The Numbers</span>
+        </h2>
+        <p class="reveal reveal-delay-2" style="font-size:0.9375rem;color:var(--muted-mid);max-width:380px;line-height:1.8;">
+          We measure success in leads generated, revenue driven, and rankings achieved — not impressions or follower counts.
+        </p>
+      </div>
+    </div>
+
+    <div class="results-grid reveal">
+      <div class="result-card">
+        <div class="result-num" data-count="380" data-suffix="%">0</div>
+        <div class="result-label">Organic Traffic Growth</div>
+        <div class="result-sub">Average across SEO clients</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">Top 3</div>
+        <div class="result-label">Google Rankings</div>
+        <div class="result-sub">Local search results achieved</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num" data-count="4" data-suffix=".2x">0</div>
+        <div class="result-label">Average ROAS</div>
+        <div class="result-sub">Return on ad spend delivered</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num" data-count="60" data-suffix="%">0</div>
+        <div class="result-label">Lead Conversion Lift</div>
+        <div class="result-sub">After website & funnel optimization</div>
+      </div>
+    </div>
+
+    <div class="case-study-strip">
+      <div class="case-card reveal">
+        <div class="case-tag">Hospitality · Bangkok</div>
+        <div class="case-metric">+312%</div>
+        <div class="case-desc">Organic search traffic increase in 6 months for a luxury hotel group through targeted SEO and Google Business optimization.</div>
+        <div class="case-industry">Industry: Hospitality & Hotels</div>
+      </div>
+      <div class="case-card reveal reveal-delay-1">
+        <div class="case-tag">F&B · Pattaya</div>
+        <div class="case-metric">4.8x ROAS</div>
+        <div class="case-desc">Facebook and Instagram ad campaigns for a restaurant group driving consistent table bookings and private event inquiries every week.</div>
+        <div class="case-industry">Industry: Food & Beverage</div>
+      </div>
+      <div class="case-card reveal reveal-delay-2">
+        <div class="case-tag">Real Estate · Thailand</div>
+        <div class="case-metric">68% More Leads</div>
+        <div class="case-desc">Conversion-optimized landing pages and Google Ads integration generating qualified property buyer leads month-on-month.</div>
+        <div class="case-industry">Industry: Real Estate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PROCESS ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="margin-bottom:3.5rem;">
+      <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> How It Works</div>
+      <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);max-width:520px;line-height:1.1;">
+        A Proven System<br><span class="display-italic" style="color:var(--gold);">Built For Results</span>
+      </h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h4>Audit</h4>
+        <p>Deep analysis of your current website, SEO position, ad performance, and conversion funnel to identify growth gaps.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-num">02</div>
+        <h4>Strategy</h4>
+        <p>Custom growth roadmap built around your business goals, target audience, and highest-ROI opportunities.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-num">03</div>
+        <h4>Build</h4>
+        <p>We execute: websites, ad campaigns, SEO infrastructure, and automation systems — all conversion-engineered.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-num">04</div>
+        <h4>Launch</h4>
+        <p>Coordinated launch across all channels with real-time tracking, reporting dashboards, and performance baselines.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-num">05</div>
+        <h4>Optimize</h4>
+        <p>Ongoing data-driven refinement of every system to compound results, reduce cost-per-lead, and scale revenue.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -356,14 +689,14 @@
   <div class="container">
     <div class="heritage-grid">
       <div>
-        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Our Heritage</div>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> Our Foundation</div>
         <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1.5rem;">
-          Backed by<br><span class="display-italic" style="color:var(--gold);">Dreamkey Entertainment</span>
+          20 Years of Market<br><span class="display-italic" style="color:var(--gold);">Intelligence & Trust</span>
         </h2>
         <p class="reveal reveal-delay-2" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.5rem;">
-          Dreamkey Media is part of the Dreamkey Entertainment group, with over two decades of experience in Thailand's nightlife, events, and hospitality industry. This legacy of creativity and trust fuels our media services today.
+          Dreamkey Media is part of the Dreamkey Entertainment group — two decades operating at the intersection of hospitality, lifestyle, and business in Thailand. That depth of market knowledge is built into every growth strategy we create.
         </p>
-        <a href="about.html" class="btn-outline reveal reveal-delay-3">Learn Our Story
+        <a href="about.html" class="btn-outline reveal reveal-delay-3">Our Story
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
 
@@ -374,7 +707,7 @@
           </div>
           <div class="heritage-stat reveal reveal-delay-1">
             <div class="stat-num" data-count="200" data-suffix="+">0</div>
-            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px;">Events Managed</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px;">Campaigns Managed</div>
           </div>
           <div class="heritage-stat reveal reveal-delay-2">
             <div class="stat-num" data-count="500" data-suffix="+">0</div>
@@ -390,16 +723,16 @@
       <div class="reveal reveal-delay-1">
         <div style="display:flex;flex-direction:column;gap:1.5rem;">
           <div style="border:1px solid var(--border);padding:2rem;background:var(--bg);">
-            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Deep Market Knowledge</div>
-            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">20+ years of understanding Thai consumer behavior and cultural nuances.</p>
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Deep Market Intelligence</div>
+            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">20+ years understanding Thai consumer behavior, cultural nuances, and what actually drives purchasing decisions in this market.</p>
           </div>
           <div style="border:1px solid var(--border);padding:2rem;background:var(--bg);">
-            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Proven Track Record</div>
-            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Successfully launched and managed hundreds of brands and events across Thailand.</p>
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Revenue Track Record</div>
+            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Hundreds of growth campaigns, product launches, and brand-building initiatives delivered across Thailand and Southeast Asia.</p>
           </div>
           <div style="border:1px solid var(--border);padding:2rem;background:var(--bg);">
-            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Network & Connections</div>
-            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Extensive relationships across Thai business and entertainment sectors.</p>
+            <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;">Business Network Access</div>
+            <p style="font-size:0.9rem;color:var(--muted-mid);line-height:1.8;">Strategic relationships across Thai hospitality, real estate, F&B, and business sectors — opening doors that digital alone cannot.</p>
           </div>
         </div>
       </div>
@@ -413,9 +746,9 @@
   <div class="container">
     <div class="marco-grid">
       <div>
-        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> About the Founder</div>
+        <div class="eyebrow reveal" style="margin-bottom:1.25rem;"><span class="gold-line"></span> The Founder</div>
         <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1.5rem;">
-          Where Thai Wisdom<br>Meets <span class="display-italic" style="color:var(--gold);">Digital Innovation</span>
+          Local Expertise.<br><span class="display-italic" style="color:var(--gold);">Global Execution.</span>
         </h2>
 
         <div class="marco-tags reveal reveal-delay-1">
@@ -426,23 +759,24 @@
         </div>
 
         <p class="reveal reveal-delay-2" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:1.25rem;">
-          Born from the rich heritage of Dreamkey Entertainment, we understand that successful marketing in Thailand requires more than just digital skills — it demands cultural insight, authentic relationships, and a deep understanding of local market dynamics.
+          Marco Sager built Dreamkey Media on a foundation that no agency can replicate: two decades of living, building, and operating businesses inside Thailand's most competitive markets. That experience translates directly into growth strategies that work in the real Thai market — not just on paper.
         </p>
         <p class="reveal reveal-delay-3" style="font-size:1rem;color:var(--muted-mid);line-height:1.8;margin-bottom:2rem;">
-          With 100+ strategic partnerships built across Thailand and Southeast Asia, we bring unmatched market access and local expertise. Whether you're a local business expanding or an international brand entering Thailand, we're your trusted digital partner.
+          Whether you're a local business scaling up or an international brand entering Thailand, Marco's unique combination of cultural fluency, business acumen, and digital expertise makes Dreamkey Media your most powerful growth partner.
         </p>
 
         <div class="reveal reveal-delay-4" style="display:flex;flex-wrap:wrap;gap:1rem;">
-          <a href="contact.html" class="btn-hot">Connect with Marco
+          <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot">Book A Strategy Call
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+          <a href="https://www.marcosager.com" target="_blank" rel="noopener" class="btn-ghost">marcosager.com</a>
           <a href="https://www.thaibyheart.com/" target="_blank" rel="noopener" class="btn-ghost">Thai by Heart</a>
           <a href="https://ebook.dreamkeymedia.asia/" target="_blank" rel="noopener" class="btn-ghost">Get the Book</a>
         </div>
       </div>
 
       <div class="marco-img-wrap reveal reveal-delay-2">
-        <img src="https://dreamkeymedia.net/assets/marco-sager-photo-Cn39zDCk.png" alt="Marco Sager, Founder of Dreamkey Media" class="marco-img">
+        <img src="Marco Cool Style.jpg" alt="Marco Sager, Founder of Dreamkey Media" class="marco-img">
         <div class="marco-img-frame"></div>
         <a href="https://ebook.dreamkeymedia.asia/" target="_blank" rel="noopener">
           <img src="https://dreamkeymedia.net/assets/psychology-of-marketing-ebook-k3Zz7-1r.png" alt="The Psychology of Marketing ebook by Marco Sager" class="marco-book">
@@ -459,7 +793,7 @@
     <div style="text-align:center;max-width:540px;margin:0 auto 4rem;">
       <div class="eyebrow reveal" style="justify-content:center;margin-bottom:1.25rem;"><span class="gold-line"></span> The Dreamkey Group <span class="gold-line"></span></div>
       <h2 class="reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3rem);">
-        A Family of Brands United by<br><span class="display-italic" style="color:var(--gold);">Creativity & Trust</span>
+        An Ecosystem Built on<br><span class="display-italic" style="color:var(--gold);">Revenue & Results</span>
       </h2>
     </div>
 
@@ -467,17 +801,17 @@
       <div class="group-card reveal">
         <span class="group-icon">🎭</span>
         <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;">Dreamkey Entertainment</h3>
-        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Established leader in events, nightlife, and hospitality with 20+ years of creating unforgettable experiences across Thailand.</p>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">20+ years leading events, nightlife, and hospitality across Thailand — the foundation of market trust and brand authority the group is built on.</p>
       </div>
       <div class="group-card reveal reveal-delay-1" style="border-color:rgba(200,169,110,0.25);">
         <span class="group-icon">🚀</span>
         <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;">Dreamkey Media</h3>
-        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Creative & digital marketing agency bringing premium media production and AI-powered automation to modern businesses.</p>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Growth systems & performance marketing — websites, ads, SEO, and automation built to generate measurable revenue for modern businesses.</p>
       </div>
       <div class="group-card reveal reveal-delay-2">
         <span class="group-icon">🏢</span>
         <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;">Dreamkey Property</h3>
-        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Specialized real estate services focusing on premium properties across Thailand's most desirable locations and investment opportunities.</p>
+        <p style="font-size:0.875rem;color:var(--muted-mid);line-height:1.8;">Premium real estate advisory and acquisition services across Thailand's highest-value locations and investment opportunities.</p>
       </div>
     </div>
   </div>
@@ -487,25 +821,25 @@
 <!-- ═══ CTA ═══ -->
 <section class="cta-section">
   <div class="grid-bg" style="position:absolute;inset:0;opacity:0.2;"></div>
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 100%, rgba(200,169,110,0.07) 0%, transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 100%, rgba(200,169,110,0.08) 0%, transparent 70%);pointer-events:none;"></div>
 
   <div class="container" style="position:relative;z-index:2;">
     <div class="reveal" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(200,169,110,0.2);padding:7px 18px;background:var(--gold-dim);margin-bottom:2rem;">
       <span style="width:6px;height:6px;border-radius:50%;background:var(--hot);animation:pulse 2s ease infinite;display:inline-block;"></span>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:600;">Free Consultation Available</span>
+      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:600;">Free Growth Audit Available</span>
     </div>
 
-    <h2 class="display reveal reveal-delay-1" style="font-size:clamp(2.5rem,5.5vw,4.5rem);margin-bottom:1.5rem;max-width:700px;margin-left:auto;margin-right:auto;">
-      Ready to Grow<br>Your <span class="display-italic" style="color:var(--gold);">Business?</span>
+    <h2 class="display reveal reveal-delay-1" style="font-size:clamp(2.5rem,5.5vw,4.5rem);margin-bottom:1.5rem;max-width:760px;margin-left:auto;margin-right:auto;line-height:1.05;">
+      Ready to Build a System<br>That <span class="display-italic" style="color:var(--gold);">Generates Revenue?</span>
     </h2>
 
-    <p class="reveal reveal-delay-2" style="font-size:1.0625rem;color:var(--muted-mid);max-width:520px;margin:0 auto 2.5rem;line-height:1.8;">
-      Whether you're launching in Thailand or scaling globally, we're here to help. Get your free marketing audit and discover growth opportunities.
+    <p class="reveal reveal-delay-2" style="font-size:1.0625rem;color:var(--muted-mid);max-width:560px;margin:0 auto 2.5rem;line-height:1.8;">
+      Get a free audit of your current website, SEO ranking, and ad performance — and a clear roadmap showing exactly where your biggest growth opportunities are.
     </p>
 
     <div class="reveal reveal-delay-3" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
       <a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener" class="btn-hot" style="font-size:1rem;padding:18px 40px;">
-        Schedule a Free Meeting
+        Get A Free Growth Audit
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="contact.html" class="btn-ghost" style="font-size:0.875rem;padding:18px 32px;">View Contact Info</a>
@@ -519,8 +853,10 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="footer-logo">Dreamkey <span>Media</span></a>
-        <p class="footer-desc">Premium digital marketing and media production, powered by 20+ years of Thai market expertise.</p>
+        <a href="index.html" class="footer-logo">
+          <img src="logo-full.png" alt="Dreamkey Media" style="height:48px;width:auto;display:block;margin-bottom:1.25rem;filter:brightness(1.1);">
+        </a>
+        <p class="footer-desc">Performance marketing & growth systems for businesses in Bangkok and across Southeast Asia. Built to generate revenue, not just attention.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/dreamkeymedia" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -541,13 +877,13 @@
       </div>
 
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4>Growth Systems</h4>
         <ul>
-          <li><a href="services/video-production.html">Video Production</a></li>
-          <li><a href="services/paid-advertising.html">Acquisition Services</a></li>
-          <li><a href="services/lead-generation.html">Lead Generation</a></li>
-          <li><a href="services/custom-music-production.html">Custom AI Music</a></li>
-          <li><a href="services/ai-automation.html">AI Automation</a></li>
+          <li><a href="services/video-production.html">Website Design</a></li>
+          <li><a href="services/paid-advertising.html">Paid Advertising</a></li>
+          <li><a href="services/lead-generation.html">SEO & Visibility</a></li>
+          <li><a href="services/ai-automation.html">Automation Systems</a></li>
+          <li><a href="services/custom-music-production.html">Video Production</a></li>
         </ul>
       </div>
 
@@ -566,9 +902,9 @@
         <h4>Get In Touch</h4>
         <ul>
           <li><a href="mailto:info@dreamkeymedia.net">info@dreamkeymedia.net</a></li>
-          <li><a href="tel:+66909896546">+66 (0) 909896546</a></li>
+          <li><a href="tel:+66970752722">+(66) 097 075 2722</a></li>
           <li><a href="contact.html">Bangkok, Thailand</a></li>
-          <li><a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener">Book a Call</a></li>
+          <li><a href="https://api.leadconnectorhq.com/widget/booking/sLC2Canz8qWReIuQP6AG" target="_blank" rel="noopener">Free Growth Audit</a></li>
         </ul>
       </div>
     </div>

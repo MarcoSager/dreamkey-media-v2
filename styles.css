@@ -13,10 +13,10 @@
   --gold-glow:  rgba(200,169,110,0.20);
   --hot:        #FF4D2E;
   --hot-dim:    rgba(255,77,46,0.12);
-  --text:       #EDE9E3;
-  --text-2:     #B8B4AE;
-  --muted:      #6B6870;
-  --muted-mid:  #9A9499;
+  --text:       #F0EDE8;
+  --text-2:     #C8C4BE;
+  --muted:      #8A8890;
+  --muted-mid:  #B0ACB0;
   --font-display: 'Playfair Display', serif;
   --font-body:    'Barlow', sans-serif;
 }
@@ -29,7 +29,8 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   font-weight: 400;
-  line-height: 1.7;
+  font-size: 1.0625rem;
+  line-height: 1.75;
   overflow-x: hidden;
 }
 
@@ -41,7 +42,7 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 /* ── Typography ── */
