@@ -76,19 +76,19 @@ a              { color: inherit; text-decoration: none; }
 /* ── Buttons ── */
 .btn-hot {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--gold); color: var(--bg);
-  font-family: var(--font-body); font-weight: 700; font-size: 0.875rem;
-  letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--hot); color: #fff;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.875rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
   padding: 14px 28px; border: none; cursor: pointer; text-decoration: none;
   position: relative; overflow: hidden;
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
-  box-shadow: 0 4px 24px rgba(200,169,110,0.35);
+  box-shadow: 0 4px 20px rgba(255,77,46,0.3);
 }
 .btn-hot::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
 }
-.btn-hot:hover { background: #D4B87A; transform: translateY(-2px); box-shadow: 0 8px 36px rgba(200,169,110,0.55); }
+.btn-hot:hover { background: #FF6347; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,77,46,0.4); }
 .btn-hot:active { transform: translateY(0); }
 
 .btn-ghost {
@@ -299,33 +299,12 @@ footer.main-footer {
   .section { padding: 4rem 0; }
   .nav-links, .nav-social { display: none; }
   .nav-burger { display: flex; }
-  /* Hide CTA button from nav bar on mobile — hero & page CTAs cover it */
-  .nav-right .btn-hot { display: none; }
   .nav-links.open {
-    display: flex; flex-direction: column; gap: 0;
+    display: flex; flex-direction: column; gap: 1.5rem;
     position: fixed; inset: 0; top: 64px;
-    background: var(--bg); padding: 1.5rem 2rem;
-    align-items: flex-start; z-index: 1000;
-    overflow-y: auto;
+    background: var(--bg); padding: 2rem;
+    align-items: flex-start; z-index: 800;
   }
-  .nav-links.open > li { width: 100%; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
-  .nav-links.open > li:last-child { border-bottom: none; }
-  .nav-links.open a,
-  .nav-links.open .nav-dropdown-trigger { font-size: 1.1rem; color: var(--text); }
-  /* Flatten Services dropdown inline on mobile */
-  .nav-links.open .nav-dropdown-menu {
-    position: static; opacity: 1; visibility: visible;
-    pointer-events: all; transform: none;
-    background: transparent; border: none;
-    min-width: auto; padding: 0.5rem 0 0 1rem;
-    display: flex; flex-direction: column; gap: 0;
-    box-shadow: none;
-  }
-  .nav-links.open .nav-dropdown-menu a {
-    font-size: 0.9rem; color: var(--muted-mid);
-    padding: 0.5rem 0; border-left: none;
-    display: block;
-  }
-  .nav-links.open .nav-dropdown-menu a:hover { background: transparent; }
+  .nav-links.open a { font-size: 1.25rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
